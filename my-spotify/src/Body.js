@@ -6,7 +6,6 @@ function Body() {
         <div className="body">
             <h1>I`m Body</h1>
         </div>
-
     )
 }
 
