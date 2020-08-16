@@ -23,7 +23,7 @@ function App() {
         token: _token,
       });
 
-      spotify.getPlaylist("0p83HvnCM0oVFmHLhe0G9K").then((response) =>
+      spotify.getPlaylist("37i9dQZF1E36sMAjnkQZuc").then((response) =>
         dispatch({
           type: "SET_DISCOVER_WEEKLY",
           discover_weekly: response,

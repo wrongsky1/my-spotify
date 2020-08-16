@@ -9,7 +9,7 @@ import SongRow from "./SongRow";
 
 function Body({ spotify }) {
     const [{ discover_weekly }, dispatch] = useDataLayerValue();
-
+/*
     const playPlaylist = (id) => {
         spotify
           .play({
@@ -47,17 +47,17 @@ function Body({ spotify }) {
             });
           });
       };
-
+*/
     return(
         <div className="body">
             <Header spotify={ spotify } />
 
             <div className="body__info">
-                <img src={discover_weekly?.images[0].url} alt="" />
+                <img src="https://newjams-images.scdn.co/v2/discover-weekly/pOdnPTRma6KZzKPNRN9oUA==/bmVuZW5lbmVuZW5lbmVuZQ==/default" /*{discover_weekly?.images[0].url}*/ alt="" />
                 <div className="body__infoText">
                     <strong>PLAYLIST</strong>
                     <h2>Discover Weekly</h2>
-                    <p>{discover_weekly?.description}</p>
+                    <p>здесь будет отличная музыка, как только Spotify соизволит создать плейлист. {discover_weekly?.description}</p>
                 </div>
             </div>
 
@@ -65,14 +65,14 @@ function Body({ spotify }) {
                 <div className="body__icons">
                     <PlayCircleFilledIcon
                       className="body__shuffle"
-                      onClick={playPlaylist}
+                      /*onClick={playPlaylist}*/
                     />
                     <FavoriteIcon fontSize="large" />
                     <MoreHorizIcon />
                 </div>
 
                 {discover_weekly?.tracks.items.map((item) => (
-                    <SongRow playSong={playSong} track={item.track} />
+                    <SongRow /*playSong={playSong}*/ track={item.track} />
                 ))}
             </div>
         </div>

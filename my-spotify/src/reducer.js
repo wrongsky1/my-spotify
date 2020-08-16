@@ -3,7 +3,7 @@ export const initialState = {
     playlists: [],
     playing: false,
     item: null,
-    token: null,
+    //token: "2.230165850.758482627.1597580430-1858440496.1597339608"
 };
 
 const reducer = (state, action) => {
