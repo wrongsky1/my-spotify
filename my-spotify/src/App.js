@@ -17,9 +17,29 @@ function App() {
     const _token = hash.access_token;
 
     if (_token) {
+      
       dispatch({
         type: "SET_TOKEN",
         token: _token,
+      });
+
+      spotify.getPlaylist("0p83HvnCM0oVFmHLhe0G9K").then((response) =>
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        })
+      );
+
+      spotify.getMyTopArtists().then((response) =>
+        dispatch({
+          type: "SET_TOP_ARTISTS",
+          top_artists: response,
+        })
+      );
+
+      dispatch({
+        type: "SET_SPOTIFY",
+        spotify: spotify,
       });
 
       spotify.setAccessToken(_token);
